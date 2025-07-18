@@ -1,0 +1,148 @@
+/* App.css */
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background-color: #0a0f1c;
+  color: white;
+}
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 1.5rem;
+  background-color: #0a0f1c;
+  position: relative;
+}
+
+.hero-gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 8px;
+  width: 100%;
+  background: linear-gradient(to right, #00D4FF, #00FF88, #8B5CF6);
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .hero h1 {
+    font-size: 3.75rem;
+  }
+}
+
+.hero p {
+  font-size: 1.125rem;
+  max-width: 40rem;
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 768px) {
+  .hero p {
+    font-size: 1.25rem;
+  }
+}
+
+.button-group {
+  display: flex;
+  gap: 1rem;
+}
+
+.button-primary {
+  padding: 0.75rem 1.5rem;
+  background: linear-gradient(to right, #00D4FF, #8B5CF6);
+  color: white;
+  font-weight: 600;
+  border: none;
+  border-radius: 0.75rem;
+  transition: transform 0.2s ease;
+  cursor: pointer;
+}
+
+.button-primary:hover {
+  transform: scale(1.05);
+}
+
+.button-secondary {
+  padding: 0.75rem 1.5rem;
+  background: transparent;
+  color: white;
+  border: 1px solid white;
+  font-weight: 600;
+  border-radius: 0.75rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.button-secondary:hover {
+  background-color: white;
+  color: #0a0f1c;
+}
+
+.features {
+  background-color: #111827;
+  padding: 5rem 1.5rem;
+  text-align: center;
+}
+
+.features h2 {
+  font-size: 1.875rem;
+  font-weight: bold;
+  margin-bottom: 2.5rem;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  max-width: 96rem;
+  margin: 0 auto;
+}
+
+@media (min-width: 640px) {
+  .feature-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .feature-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.feature-card {
+  background: linear-gradient(to bottom right, #0f172a, #1e293b);
+  border-radius: 1rem;
+  padding: 1rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  color: white;
+  transition: transform 0.2s ease;
+}
+
+.feature-card:hover {
+  transform: scale(1.05);
+}
+
+.feature-card p {
+  font-size: 1rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+footer {
+  background-color: #0a0f1c;
+  color: white;
+  text-align: center;
+  padding: 1.5rem 0;
+  font-size: 0.875rem;
+}
