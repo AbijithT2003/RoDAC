@@ -1,3 +1,5 @@
+import React from 'react';
+
 const Footer = () => {
   return (
     <footer className="py-16 px-4 sm:px-6 lg:px-8 border-t border-white/10">
@@ -73,3 +75,5 @@ const Footer = () => {
     </footer>
   );
 };
+
+export default Footer;

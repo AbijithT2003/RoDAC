@@ -1,6 +1,15 @@
+import React from 'react';
+import {
+  Rocket, Play, Users, Activity, Globe, BookOpen, Code,
+  GitBranch, ExternalLink, ArrowRight
+} from 'lucide-react';
+import useIntersectionObserver from '../../hooks/useIntersectionObserver';
+import GlassCard from '../ui/GlassCard';
+import Button from '../ui/Button';
+
 const DeveloperResourcesSection = () => {
   const [resourcesRef, isResourcesVisible] = useIntersectionObserver(0.1);
-  
+
   const resources = [
     {
       title: "Documentation",
@@ -11,108 +20,70 @@ const DeveloperResourcesSection = () => {
       gradient: "from-blue-500 to-cyan-500"
     },
     {
-      title: "API Playground",
-      description: "Interactive testing environment",
+      title: "API Reference",
+      description: "Access and interact with RoDAC's core services",
       icon: Code,
-      stats: "Live testing",
+      stats: "100+ endpoints",
       link: "#api",
       gradient: "from-purple-500 to-pink-500"
     },
     {
-      title: "Community",
-      description: "Connect with developers worldwide",
-      icon: Users,
-      stats: "5K+ members",
-      link: "#community",
-      gradient: "from-green-500 to-emerald-500"
+      title: "GitHub",
+      description: "View the source code, contribute, or fork",
+      icon: GitBranch,
+      stats: "200+ stars",
+      link: "#github",
+      gradient: "from-yellow-500 to-orange-500"
     },
     {
-      title: "GitHub",
-      description: "Open source tools and examples",
-      icon: GitBranch,
-      stats: "2.5K stars",
-      link: "#github",
-      gradient: "from-gray-500 to-gray-600"
+      title: "Quickstart",
+      description: "Get up and running in under 5 minutes",
+      icon: Rocket,
+      stats: "5 min setup",
+      link: "#quickstart",
+      gradient: "from-green-500 to-lime-500"
     }
   ];
 
   return (
     <section ref={resourcesRef} className="py-20 px-4 sm:px-6 lg:px-8" id="docs">
-      <div className="max-w-7xl mx-auto">
-        <div className={`
-          text-center mb-16 transition-all duration-1000
-          ${isResourcesVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}
-        `}>
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            Built for Developers, by Developers
-          </h2>
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-            Everything you need to build, deploy, and scale with RoDAC.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {resources.map((resource, index) => (
-            <div
-              key={resource.title}
-              className={`
-                transition-all duration-1000 delay-${index * 100}
-                ${isResourcesVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}
-              `}
-            >
-              <GlassCard className="h-full group cursor-pointer">
-                <div className={`
-                  w-16 h-16 rounded-2xl bg-gradient-to-r ${resource.gradient} 
-                  flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300
-                `}>
-                  <resource.icon className="w-8 h-8 text-white" />
-                </div>
-                
-                <h3 className="text-xl font-bold text-white mb-3">{resource.title}</h3>
-                <p className="text-gray-400 mb-4">{resource.description}</p>
-                
-                <div className="flex items-center justify-between">
-                  <span className="text-sm text-cyan-400 font-medium">{resource.stats}</span>
-                  <ArrowRight className="w-4 h-4 text-gray-400 group-hover:text-cyan-400 group-hover:translate-x-1 transition-all duration-200" />
-                </div>
-              </GlassCard>
-            </div>
-          ))}
-        </div>
-
-        {/* Code Example */}
-        <div className="mt-16">
-          <GlassCard className="p-0 overflow-hidden">
-            <div className="bg-black/50 p-6">
+      <div className="max-w-7xl mx-auto text-center mb-12">
+        <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-white mb-4">
+          Developer Resources
+        </h2>
+        <p className="text-base text-gray-300">
+          Everything you need to build, deploy, and scale with RoDAC.
+        </p>
+      </div>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {resources.map((resource, index) => (
+          <div
+            key={resource.title}
+            className={`transition-all duration-1000 delay-[${index * 100}ms]
+              ${isResourcesVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+          >
+            <GlassCard className={`bg-gradient-to-br ${resource.gradient} p-6 rounded-2xl shadow-lg h-full`}>
               <div className="flex items-center justify-between mb-4">
-                <div className="flex items-center gap-2">
-                  <div className="w-3 h-3 bg-red-500 rounded-full"></div>
-                  <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
-                  <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-                  <span className="text-gray-400 ml-4">Quick Start Example</span>
-                </div>
-                <Button size="sm" variant="ghost">
-                  <ExternalLink size={16} className="mr-1" />
-                  Open in Playground
-                </Button>
+                <resource.icon className="w-8 h-8 text-white" />
+                <span className="text-sm text-white bg-black bg-opacity-20 rounded-full px-3 py-1">
+                  {resource.stats}
+                </span>
               </div>
-              <pre className="text-green-400 font-mono text-sm leading-relaxed">
-                <code>{`# Install RoDAC CLI
-npm install -g @rodac/cli
-
-# Initialize new project  
-rodac init my-app --template=nextjs
-
-# Deploy globally
-rodac deploy --regions=global
-
-# Scale automatically
-rodac scale --min=2 --max=10 --cpu-target=70%`}</code>
-              </pre>
-            </div>
-          </GlassCard>
-        </div>
+              <h3 className="text-xl font-semibold text-white mb-2">
+                {resource.title}
+              </h3>
+              <p className="text-sm text-white/80 mb-4">
+                {resource.description}
+              </p>
+              <Button variant="ghost" size="sm" className="text-white hover:underline">
+                Learn more <ArrowRight className="w-4 h-4 ml-2" />
+              </Button>
+            </GlassCard>
+          </div>
+        ))}
       </div>
     </section>
   );
 };
+
+export default DeveloperResourcesSection;

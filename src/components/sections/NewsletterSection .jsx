@@ -1,3 +1,9 @@
+import React, { useState } from 'react';
+import { CheckCircle } from 'lucide-react';
+import GlassCard from '../ui/GlassCard';
+import Button from '../ui/Button';
+import useIntersectionObserver from '../../hooks/useIntersectionObserver';
+
 const NewsletterSection = () => {
   const [newsletterRef, isNewsletterVisible] = useIntersectionObserver(0.1);
   const [email, setEmail] = useState('');
@@ -66,3 +72,6 @@ const NewsletterSection = () => {
     </section>
   );
 };
+
+export default NewsletterSection;
+

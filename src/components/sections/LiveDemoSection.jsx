@@ -82,7 +82,7 @@ const LiveDemoSection = () => {
                     </Button>
                   </div>
                 </div>
-                
+
                 <div className="font-mono text-sm space-y-2">
                   {demoSteps.map((step, index) => (
                     <div key={index} className={`

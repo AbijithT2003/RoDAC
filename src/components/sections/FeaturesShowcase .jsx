@@ -1,3 +1,4 @@
+// FeaturesShowcase.jsx
 import React from 'react';
 import { Settings, Code, Zap, Brain, Leaf, Shield } from 'lucide-react';
 import useIntersectionObserver from '../../hooks/useIntersectionObserver';
@@ -61,22 +62,25 @@ const FeaturesShowcase = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {features.map((feature, index) => (
-            <div
-              key={feature.title}
-              className={`
-                transition-all duration-1000 delay-${index * 100}
-                ${isFeaturesVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}
-              `}
-            >
-              <GlassCard className="h-full group">
-                <feature.icon className="w-12 h-12 text-cyan-400 mb-4 group-hover:scale-110 transition-transform duration-300" />
-                <h3 className="text-xl font-bold text-white mb-3">{feature.title}</h3>
-                <p className="text-gray-400 mb-4">{feature.description}</p>
-                <div className="text-sm text-cyan-400 font-medium">{feature.demo}</div>
-              </GlassCard>
-            </div>
-          ))}
+          {features.map((feature, index) => {
+            const Icon = feature.icon;
+            return (
+              <div
+                key={feature.title}
+                className={`
+                  transition-all duration-1000 delay-[${index * 100}ms]
+                  ${isFeaturesVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}
+                `}
+              >
+                <GlassCard className="h-full group">
+                  <Icon className="w-12 h-12 text-cyan-400 mb-4 group-hover:scale-110 transition-transform duration-300" />
+                  <h3 className="text-xl font-bold text-white mb-3">{feature.title}</h3>
+                  <p className="text-gray-400 mb-4">{feature.description}</p>
+                  <div className="text-sm text-cyan-400 font-medium">{feature.demo}</div>
+                </GlassCard>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>
