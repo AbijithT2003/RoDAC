@@ -1,5 +1,5 @@
 import React from 'react';
-import {
+import {  
   Rocket, Play, Users, Activity, Globe, BookOpen, Code,
   GitBranch, ExternalLink, ArrowRight
 } from 'lucide-react';
@@ -7,6 +7,7 @@ import useIntersectionObserver from '../../hooks/useIntersectionObserver';
 import GlassCard from '../UI/GlassCard';
 import Button from '../UI/Button';
 import './DeveloperResourcesSection.css';
+
 const DeveloperResourcesSection = () => {
   const [resourcesRef, isResourcesVisible] = useIntersectionObserver(0.1);
 
@@ -17,7 +18,7 @@ const DeveloperResourcesSection = () => {
       icon: BookOpen,
       stats: "500+ pages",
       link: "#docs",
-      gradient: "from-blue-500 to-cyan-500"
+      gradient: "gradient-blue"
     },
     {
       title: "API Reference",
@@ -25,7 +26,7 @@ const DeveloperResourcesSection = () => {
       icon: Code,
       stats: "100+ endpoints",
       link: "#api",
-      gradient: "from-purple-500 to-pink-500"
+      gradient: "gradient-purple"
     },
     {
       title: "GitHub",
@@ -33,7 +34,7 @@ const DeveloperResourcesSection = () => {
       icon: GitBranch,
       stats: "200+ stars",
       link: "#github",
-      gradient: "from-yellow-500 to-orange-500"
+      gradient: "gradient-yellow"
     },
     {
       title: "Quickstart",
@@ -41,42 +42,39 @@ const DeveloperResourcesSection = () => {
       icon: Rocket,
       stats: "5 min setup",
       link: "#quickstart",
-      gradient: "from-green-500 to-lime-500"
+      gradient: "gradient-green"
     }
   ];
 
   return (
-    <section ref={resourcesRef} className="py-20 px-4 sm:px-6 lg:px-8" id="docs">
-      <div className="max-w-7xl mx-auto text-center mb-12">
-        <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-white mb-4">
-          Developer Resources
-        </h2>
-        <p className="text-base text-gray-300">
+    <section ref={resourcesRef} className="developer-section" id="docs">
+      <div className="developer-header">
+        <h2 className="developer-title">Developer Resources</h2>
+        <p className="developer-subtitle">
           Everything you need to build, deploy, and scale with RoDAC.
         </p>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="developer-grid">
         {resources.map((resource, index) => (
           <div
             key={resource.title}
-            className={`transition-all duration-1000 delay-[${index * 100}ms]
-              ${isResourcesVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+            className={`dev-card-wrapper ${isResourcesVisible ? 'visible' : 'hidden'} delay-${index}`}
           >
-            <GlassCard className={`bg-gradient-to-br ${resource.gradient} p-6 rounded-2xl shadow-lg h-full`}>
-              <div className="flex items-center justify-between mb-4">
-                <resource.icon className="w-8 h-8 text-white" />
-                <span className="text-sm text-white bg-black bg-opacity-20 rounded-full px-3 py-1">
+            <GlassCard className={`dev-resource-card ${resource.gradient}`}>
+              <div className="dev-card-header">
+                <resource.icon className="dev-icon" />
+                <span className="dev-stats">
                   {resource.stats}
                 </span>
               </div>
-              <h3 className="text-xl font-semibold text-white mb-2">
+              <h3 className="dev-title">
                 {resource.title}
               </h3>
-              <p className="text-sm text-white/80 mb-4">
+              <p className="dev-description">
                 {resource.description}
               </p>
-              <Button variant="ghost" size="sm" className="text-white hover:underline">
-                Learn more <ArrowRight className="w-4 h-4 ml-2" />
+              <Button variant="ghost" size="sm" className="dev-button">
+                Learn more <ArrowRight className="dev-arrow-icon" />
               </Button>
             </GlassCard>
           </div>

@@ -1,5 +1,5 @@
 import React from 'react';
-import './styles/AnimatedBackground.css'; // Assuming you have styles for the background
+import './AnimatedBackground.css'; // Assuming you have styles for the background
 
 const AnimatedBackground = () => {
   return (

@@ -1,5 +1,5 @@
 import React from 'react';
-import './styles/FloatingElement.css'; // Assuming you have styles for the floating element
+import './FloatingElement.css'; // Assuming you have styles for the floating element
 const FloatingElement = ({ children, delay = 0, className = '' }) => {
   return (
     <div 

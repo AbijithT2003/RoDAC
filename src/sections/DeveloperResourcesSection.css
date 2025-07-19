@@ -1,17 +1,124 @@
 .developer-section {
-  padding: 4rem 2rem;
-  background-color: #fff;
+  padding: 4rem 1rem;
+  background-color: #0c0c0c;
+  color: white;
+}
+
+.developer-header {
+  max-width: 1200px;
+  margin: 0 auto 3rem;
+  text-align: center;
+}
+
+.developer-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.developer-subtitle {
+  color: #ccc;
+}
+
+.developer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.dev-card-wrapper {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.dev-card-wrapper.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .dev-resource-card {
-  background-color: #f9fafb;
-  border: 1px solid #e2e8f0;
   padding: 1.5rem;
   border-radius: 1rem;
-  margin-bottom: 1rem;
-  transition: background 0.2s ease-in-out;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  height: 100%;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.dev-resource-card:hover {
-  background-color: #e2e8f0;
+/* Gradients */
+.gradient-blue {
+  background: linear-gradient(to bottom right, #3b82f6, #06b6d4);
 }
+
+.gradient-purple {
+  background: linear-gradient(to bottom right, #a855f7, #ec4899);
+}
+
+.gradient-yellow {
+  background: linear-gradient(to bottom right, #facc15, #f97316);
+}
+
+.gradient-green {
+  background: linear-gradient(to bottom right, #22c55e, #84cc16);
+}
+
+/* Card content */
+.dev-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.dev-icon {
+  width: 2rem;
+  height: 2rem;
+}
+
+.dev-stats {
+  font-size: 0.75rem;
+  padding: 0.3rem 0.75rem;
+  background: rgba(0, 0, 0, 0.25);
+  border-radius: 999px;
+}
+
+.dev-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.dev-description {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 1rem;
+}
+
+.dev-button {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  color: white;
+  text-decoration: none;
+}
+
+.dev-button:hover {
+  text-decoration: underline;
+}
+
+.dev-arrow-icon {
+  width: 1rem;
+  height: 1rem;
+}
+
+/* Delay utility for smooth staggered reveal */
+.delay-0 { transition-delay: 0ms; }
+.delay-1 { transition-delay: 100ms; }
+.delay-2 { transition-delay: 200ms; }
+.delay-3 { transition-delay: 300ms; }
+.delay-4 { transition-delay: 400ms; }

@@ -13,7 +13,7 @@ const App = () => {
   return (
     <>
       <Navigation />
-      <HeroSection />
+      <HeroSection /> 
       <FeaturesShowcase />
       <LiveDemoSection />
       <ValuePropositionSection />
