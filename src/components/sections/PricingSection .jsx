@@ -1,3 +1,10 @@
+import React, { useState } from 'react';
+import { CheckCircle } from 'lucide-react';
+import useIntersectionObserver from '../../hooks/useIntersectionObserver';
+import GlassCard from '../ui/GlassCard';
+import Button from '../ui/Button';
+import useAnimatedCounter from '../../hooks/useAnimatedCounter';
+
 const PricingSection = () => {
   const [pricingRef, isPricingVisible] = useIntersectionObserver(0.1);
   const [resources, setResources] = useState({ cpu: 4, memory: 8, storage: 100 });
