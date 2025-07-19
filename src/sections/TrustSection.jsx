@@ -1,5 +1,6 @@
 import React from 'react';
-import useAnimatedCounter from '../../hooks/useAnimatedCounter';
+import useAnimatedCounter from '../hooks/useAnimatedCounter';
+import './TrustSection.css';
 
 const TrustSection = () => {
   const users = useAnimatedCounter(12000);

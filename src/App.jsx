@@ -3,7 +3,7 @@ import HeroSection from './sections/HeroSection';
 import ValuePropositionSection from './sections/ValuePropositionSection';
 import FeaturesShowcase from './sections/FeaturesShowcase';
 import LiveDemoSection from './sections/LiveDemoSection';
-import PricingSection from './sections/PricingSection';
+import PricingSection from './sections/Pricing/PricingSection';
 import TrustSection from './sections/TrustSection';
 import Navigation from './sections/Navigation';
 import NewsletterSection from './sections/NewsletterSection';

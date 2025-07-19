@@ -1,8 +1,9 @@
 // FeaturesShowcase.jsx
 import React from 'react';
 import { Settings, Code, Zap, Brain, Leaf, Shield } from 'lucide-react';
-import useIntersectionObserver from '../../hooks/useIntersectionObserver';
-import GlassCard from '../ui/GlassCard';
+import useIntersectionObserver from '../hooks/useIntersectionObserver';
+import GlassCard from '../UI/GlassCard';
+import './FeaturesShowcase.css';
 
 const FeaturesShowcase = () => {
   const [featuresRef, isFeaturesVisible] = useIntersectionObserver(0.1);

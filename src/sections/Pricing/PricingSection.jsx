@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import useIntersectionObserver from '../../hooks/useIntersectionObserver';
-import GlassCard from '../ui/GlassCard';
+import GlassCard from '../../UI/GlassCard';
 import ResourceCalculator from './ResourceCalculator';
 import PricingPlanCard from './PricingPlanCard';
-
+import "./PricingSection.css";
 const PricingSection = () => {
   const [pricingRef, isPricingVisible] = useIntersectionObserver(0.1);
   const [resources, setResources] = useState({ cpu: 4, memory: 8, storage: 100 });

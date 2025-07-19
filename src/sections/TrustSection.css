@@ -1,0 +1,13 @@
+.trust-section {
+  padding: 4rem 2rem;
+  background-color: #f0fdfa;
+  text-align: center;
+}
+
+.trust-card {
+  background-color: #ecfeff;
+  border: 1px solid #a5f3fc;
+  border-radius: 1rem;
+  padding: 2rem;
+  margin: 1rem;
+}

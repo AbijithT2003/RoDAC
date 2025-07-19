@@ -1,0 +1,28 @@
+.newsletter-section {
+  padding: 4rem 2rem;
+  background: #1e293b;
+  color: white;
+  text-align: center;
+}
+
+.newsletter-input {
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  margin-right: 0.5rem;
+  width: 250px;
+  max-width: 80%;
+  border: none;
+}
+
+.newsletter-button {
+  background-color: #3b82f6;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+}
+
+.newsletter-button:hover {
+  background-color: #2563eb;
+}

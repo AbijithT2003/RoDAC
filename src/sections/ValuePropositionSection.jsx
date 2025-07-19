@@ -1,7 +1,7 @@
 
 // File: src/sections/ValuePropositionSection.jsx
 import React from 'react';
-import GlassCard from '../ui/GlassCard';
+import GlassCard from '../UI/GlassCard';
 import { LucideCloudCog, LucideShieldCheck, LucideCpu } from 'lucide-react';
 
 const ValuePropositionSection = () => {

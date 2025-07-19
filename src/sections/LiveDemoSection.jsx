@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { Play, Pause, RotateCcw, Monitor, Globe, Zap } from 'lucide-react';
-import GlassCard from '../ui/GlassCard';
-import Button from '../ui/Button';
-import useIntersectionObserver from '../../hooks/useIntersectionObserver';
+import GlassCard from '../UI/GlassCard';
+import Button from '../UI/Button';
+import useIntersectionObserver from '../hooks/useIntersectionObserver';
+import './LiveDemoSection.css';
 
 const LiveDemoSection = () => {
   const [demoRef, isDemoVisible] = useIntersectionObserver(0.1);

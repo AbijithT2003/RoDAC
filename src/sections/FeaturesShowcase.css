@@ -1,0 +1,17 @@
+.features-section {
+  padding: 5rem 2rem;
+  background-color: #f1f5f9;
+}
+
+.feature-item {
+  background-color: white;
+  border-left: 4px solid #3b82f6;
+  padding: 1.5rem;
+  margin: 1rem 0;
+  border-radius: 0.75rem;
+  transition: box-shadow 0.3s;
+}
+
+.feature-item:hover {
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.05);
+}

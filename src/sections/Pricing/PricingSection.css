@@ -1,0 +1,17 @@
+.pricing-section {
+  padding: 5rem 2rem;
+  background-color: #f9fafb;
+}
+
+.pricing-card {
+  background-color: white;
+  border: 1px solid #e5e7eb;
+  padding: 2rem;
+  border-radius: 1rem;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.pricing-card:hover {
+  transform: scale(1.03);
+}

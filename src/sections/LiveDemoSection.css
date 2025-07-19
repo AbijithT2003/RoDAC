@@ -1,0 +1,18 @@
+.live-demo-section {
+  padding: 5rem 2rem;
+  background: #e0f2fe;
+  text-align: center;
+}
+
+.demo-button {
+  background-color: #0ea5e9;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  transition: background-color 0.3s;
+}
+
+.demo-button:hover {
+  background-color: #0284c7;
+}

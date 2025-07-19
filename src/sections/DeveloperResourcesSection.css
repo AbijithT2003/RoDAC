@@ -1,0 +1,17 @@
+.developer-section {
+  padding: 4rem 2rem;
+  background-color: #fff;
+}
+
+.dev-resource-card {
+  background-color: #f9fafb;
+  border: 1px solid #e2e8f0;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  margin-bottom: 1rem;
+  transition: background 0.2s ease-in-out;
+}
+
+.dev-resource-card:hover {
+  background-color: #e2e8f0;
+}

@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { CheckCircle } from 'lucide-react';
-import GlassCard from '../ui/GlassCard';
-import Button from '../ui/Button';
-import useIntersectionObserver from '../../hooks/useIntersectionObserver';
+import GlassCard from '../UI/GlassCard';
+import Button from '../UI/Button';
+import useIntersectionObserver from '../hooks/useIntersectionObserver';
+import './NewsletterSection.css';
 
 const NewsletterSection = () => {
   const [newsletterRef, isNewsletterVisible] = useIntersectionObserver(0.1);

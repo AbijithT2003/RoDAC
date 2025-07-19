@@ -1,5 +1,5 @@
 import React from 'react';
-import GlassCard from '../ui/GlassCard';
+import GlassCard from '../../UI/GlassCard';
 
 const ResourceCalculator = ({ resources, setResources, estimatedCost }) => {
   const sliders = [

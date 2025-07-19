@@ -4,9 +4,9 @@ import {
   GitBranch, ExternalLink, ArrowRight
 } from 'lucide-react';
 import useIntersectionObserver from '../../hooks/useIntersectionObserver';
-import GlassCard from '../ui/GlassCard';
-import Button from '../ui/Button';
-
+import GlassCard from '../UI/GlassCard';
+import Button from '../UI/Button';
+import './DeveloperResourcesSection.css';
 const DeveloperResourcesSection = () => {
   const [resourcesRef, isResourcesVisible] = useIntersectionObserver(0.1);
 

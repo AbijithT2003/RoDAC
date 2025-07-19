@@ -1,11 +1,12 @@
 import React from 'react';
 import { Rocket, Play, Users, Activity, Globe } from 'lucide-react';
-import useIntersectionObserver from '../../hooks/useIntersectionObserver';
-import useTypingEffect from '../../hooks/useTypingEffect';
-import AnimatedBackground from '../ui/AnimatedBackground';
-import FloatingElement from '../ui/FloatingElement';
-import GlassCard from '../ui/GlassCard';
-import Button from '../ui/Button';
+import useIntersectionObserver from '../hooks/useIntersectionObserver';
+import useTypingEffect from '../hooks/useTypingEffect';
+import AnimatedBackground from '../UI/AnimatedBackground';
+import FloatingElement from '../UI/FloatingElement';
+import GlassCard from '../UI/GlassCard';
+import Button from '../UI/Button';
+import './HeroSection.css';
 
 const HeroSection = () => {
   const [heroRef, isHeroVisible] = useIntersectionObserver(0.1);

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Menu, X } from 'lucide-react';
-import Button from '../ui/Button';
+import Button from '../UI/Button';
+import './Navigation.css';
 
 const Navigation = () => {
   const [open, setOpen] = useState(false);

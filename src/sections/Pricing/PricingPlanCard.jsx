@@ -1,7 +1,7 @@
 import React from 'react';
 import { CheckCircle } from 'lucide-react';
-import GlassCard from '../ui/GlassCard';
-import Button from '../ui/Button';
+import GlassCard from '../../UI/GlassCard';
+import Button from '../../UI/Button';
 
 const PricingPlanCard = ({ plan, isVisible, delay }) => {
   return (

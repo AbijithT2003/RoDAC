@@ -1,0 +1,19 @@
+.hero-section {
+  padding: 6rem 2rem;
+  background: linear-gradient(120deg, #0f172a, #1e293b);
+  color: white;
+  text-align: center;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  color: #cbd5e1;
+  margin-bottom: 2rem;
+}
+
