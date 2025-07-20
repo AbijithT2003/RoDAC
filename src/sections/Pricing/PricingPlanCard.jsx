@@ -1,7 +1,5 @@
 import React from 'react';
 import { CheckCircle } from 'lucide-react';
-import GlassCard from '../../UI/GlassCard';
-import Button from '../../UI/Button';
 
 const PricingPlanCard = ({ plan, isVisible, delay }) => {
   return (
@@ -9,37 +7,37 @@ const PricingPlanCard = ({ plan, isVisible, delay }) => {
       className={`
         transition-all duration-1000 delay-${delay}
         ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}
-        ${plan.popular ? 'transform scale-105' : ''}
       `}
     >
-      <GlassCard className={`h-full relative ${plan.popular ? 'border-cyan-500/50' : ''}`}>
+      <div className={`pricing-glass-card h-full ${plan.popular ? 'pricing-popular' : ''}`}>
         {plan.popular && (
-          <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-            <span className="bg-gradient-to-r from-cyan-500 to-blue-500 text-white px-4 py-1 rounded-full text-sm font-semibold">
-              Most Popular
-            </span>
+          <div className="popular-badge">
+            Most Popular
           </div>
         )}
 
-        <div className="text-center mb-6">
-          <h3 className="text-2xl font-bold text-white mb-2">{plan.name}</h3>
-          <div className="text-4xl font-bold text-white mb-2">{plan.price}</div>
-          <p className="text-gray-400">{plan.description}</p>
+        <div className="plan-header">
+          <h3 className="plan-name">{plan.name}</h3>
+          <div className="plan-price">{plan.price}</div>
+          {plan.price !== 'Free' && plan.price !== 'Custom' && (
+            <div className="text-gray-400 text-sm">/month</div>
+          )}
+          <p className="plan-description">{plan.description}</p>
         </div>
 
-        <ul className="space-y-3 mb-8">
+        <ul className="features-list">
           {plan.features.map((feature, featureIndex) => (
-            <li key={featureIndex} className="flex items-center gap-3">
-              <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0" />
-              <span className="text-gray-300">{feature}</span>
+            <li key={featureIndex} className="feature-item">
+              <CheckCircle className="feature-icon" />
+              <span>{feature}</span>
             </li>
           ))}
         </ul>
 
-        <Button className={`w-full bg-gradient-to-r ${plan.gradient}`} size="lg">
-          {plan.name === 'Enterprise' ? 'Contact Sales' : 'Get Started'}
-        </Button>
-      </GlassCard>
+        <button className={`pricing-button ${plan.buttonClass}`}>
+          {plan.buttonText}
+        </button>
+      </div>
     </div>
   );
 };

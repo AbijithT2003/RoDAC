@@ -1,7 +1,6 @@
 import React from 'react';
-import GlassCard from '../../UI/GlassCard';
 
-const ResourceCalculator = ({ resources, setResources, estimatedCost }) => {
+const ResourceCalculator = ({ resources, setResources, estimatedCost, isVisible }) => {
   const sliders = [
     { key: 'cpu', label: 'CPU Cores', max: 32, unit: 'cores' },
     { key: 'memory', label: 'Memory', max: 128, unit: 'GB' },
@@ -9,14 +8,14 @@ const ResourceCalculator = ({ resources, setResources, estimatedCost }) => {
   ];
 
   return (
-    <GlassCard>
-      <h3 className="text-xl font-bold text-white mb-6">Resource Calculator</h3>
+    <div className={`resource-calculator transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+      <h3 className="calculator-title">Resource Calculator</h3>
       <div className="space-y-6">
         {sliders.map(({ key, label, max, unit }) => (
-          <div key={key}>
-            <div className="flex justify-between mb-2">
-              <span className="text-gray-300">{label}</span>
-              <span className="text-cyan-400">{resources[key]} {unit}</span>
+          <div key={key} className="slider-container">
+            <div className="slider-header">
+              <span className="slider-label">{label}</span>
+              <span className="slider-value">{resources[key]} {unit}</span>
             </div>
             <input
               type="range"
@@ -24,16 +23,19 @@ const ResourceCalculator = ({ resources, setResources, estimatedCost }) => {
               max={max}
               value={resources[key]}
               onChange={(e) => setResources({ ...resources, [key]: parseInt(e.target.value) })}
-              className="w-full h-2 bg-gray-700 rounded-lg appearance-none cursor-pointer slider"
+              className="custom-slider"
             />
           </div>
         ))}
-        <div className="text-center pt-4 border-t border-white/10">
-          <div className="text-3xl font-bold text-white mb-2">${estimatedCost}/month</div>
-          <div className="text-gray-400">Estimated cost with 25% savings vs traditional cloud</div>
+        <div className="cost-display">
+          <div className="cost-amount">${estimatedCost}</div>
+          <div className="text-sm">
+            <span className="text-gray-400">/month</span>
+          </div>
+          <div className="cost-description">Estimated cost with 25% savings vs traditional cloud</div>
         </div>
       </div>
-    </GlassCard>
+    </div>
   );
 };
 
