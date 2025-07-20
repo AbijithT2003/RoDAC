@@ -1,7 +1,5 @@
-import React from 'react';
 import { Rocket, Play, Users, Activity, Globe } from 'lucide-react';
 import useIntersectionObserver from '../hooks/useIntersectionObserver';
-import useTypingEffect from '../hooks/useTypingEffect';
 import AnimatedBackground from '../UI/AnimatedBackground';
 import FloatingElement from '../UI/FloatingElement';
 import GlassCard from '../UI/GlassCard';
