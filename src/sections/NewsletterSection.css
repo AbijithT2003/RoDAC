@@ -65,7 +65,6 @@
   border-radius: 20px;
   padding: 2.5rem;
   position: relative;
-  overflow: hidden;
 }
 
 .newsletter-card::before {
@@ -85,7 +84,7 @@
 .newsletter-form {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1rem;
   position: relative;
   z-index: 2;
 }
@@ -95,8 +94,8 @@
 }
 
 .newsletter-input {
-  width: 100%;
-  padding: 1rem 1.5rem;
+  width: 90%;
+  padding: 1rem 1rem;
   background: rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.2);

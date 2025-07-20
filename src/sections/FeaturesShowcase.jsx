@@ -1,8 +1,7 @@
 import React from 'react';
 import { Settings, Code, Zap, Brain, Leaf, Shield } from 'lucide-react';
 import useIntersectionObserver from '../hooks/useIntersectionObserver';
-import GlassCard from '../UI/GlassCard';
-import './FeaturesShowcase.css'; // Ensure this is correctly imported
+import './FeaturesShowcase.css';
 
 const FeaturesShowcase = () => {
   const [featuresRef, isFeaturesVisible] = useIntersectionObserver(0.1);
@@ -49,44 +48,29 @@ const FeaturesShowcase = () => {
   return (
     <section
       ref={featuresRef}
-      className={`features-section py-20 px-4 sm:px-6 lg:px-8`}
+      className="features-section"
     >
-      <div className="max-w-7xl mx-auto">
-        <div
-          className={`features-header text-center mb-16 transition-all duration-1000 ${
-            isFeaturesVisible
-              ? 'opacity-100 translate-y-0'
-              : 'opacity-0 translate-y-10'
-          }`}
-        >
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            Everything You Need. Nothing You Don't.
-          </h2>
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-            Comprehensive platform features designed for modern infrastructure needs.
-          </p>
+      <div className="features-container">
+        <div className={`features-header ${isFeaturesVisible ? 'visible' : ''}`}>
+          <h2>Everything You Need. Nothing You Don't.</h2>
+          <p>Comprehensive platform features designed for modern infrastructure needs.</p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="features-grid">
           {features.map((feature, index) => {
             const Icon = feature.icon;
             return (
               <div
                 key={feature.title}
-                className={`feature-card transition-all duration-1000 delay-[${index * 100}ms] ${
-                  isFeaturesVisible
-                    ? 'opacity-100 translate-y-0'
-                    : 'opacity-0 translate-y-10'
-                }`}
+                className={`feature-card ${isFeaturesVisible ? 'visible' : ''}`}
+                style={{ animationDelay: `${index * 100}ms` }}
               >
-                <GlassCard className="h-full group">
-                  <Icon className="w-12 h-12 text-cyan-400 mb-4 group-hover:scale-110 transition-transform duration-300" />
-                  <h3 className="text-xl font-bold text-white mb-3">
-                    {feature.title}
-                  </h3>
-                  <p className="text-gray-400 mb-4">{feature.description}</p>
-                  <div className="text-sm text-cyan-400 font-medium">{feature.demo}</div>
-                </GlassCard>
+                <div className="glass-card">
+                  <Icon className="feature-icon" />
+                  <h3 className="feature-title">{feature.title}</h3>
+                  <p className="feature-description">{feature.description}</p>
+                  <div className="feature-demo">{feature.demo}</div>
+                </div>
               </div>
             );
           })}

@@ -41,13 +41,6 @@
   max-width: 100%;
   word-wrap: break-word;
 }
-
-.hero-title span.animate-pulse {
-  animation: blink 1s step-end infinite;
-  color: #00D4FF;
-  display: inline-block;
-}
-
 .hero-subtitle {
   font-size: clamp(1rem, 2.5vw, 1.25rem);
   color: #D1D5DB;

@@ -10,7 +10,7 @@ import './HeroSection.css';
 
 const HeroSection = () => {
   const [heroRef, isHeroVisible] = useIntersectionObserver(0.1);
-  const typingText = useTypingEffect("Transform Your Infrastructure Into a Superpower");
+  const typingText = ("Transform Your Infrastructure Into a Superpower");
 
   return (
     <section ref={heroRef} className="hero-section">
@@ -22,7 +22,7 @@ const HeroSection = () => {
         <div className={`fade-in-up ${isHeroVisible ? 'visible' : ''}`}>
           <h1 className="hero-title">
             {typingText}
-            <span className="animate-pulse">|</span>
+            <span className="animate-pulse"></span>
           </h1>
 
           <p className="hero-subtitle">
