@@ -1,3 +1,4 @@
+import React from 'react';
 import { Rocket, Play, Users, Activity, Globe } from 'lucide-react';
 import useIntersectionObserver from '../hooks/useIntersectionObserver';
 import AnimatedBackground from '../UI/AnimatedBackground';
