@@ -1,46 +1,139 @@
-/* Footer.css */
-
+/* Footer.css - Modern 2025 Design */
 footer {
-  background-color: #0b0b0b;
+  background: linear-gradient(135deg, #0B1426 0%, #1A1D29 50%, #0F172A 100%);
   color: #e0e0e0;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  position: relative;
+  overflow: hidden;
+  padding: 4rem 0 2rem;
+}
+
+footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 20%, rgba(0, 212, 255, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(139, 92, 246, 0.06) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.footer-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+.grid-cols {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+/* Brand Section */
+.brand-section {
+  max-width: 400px;
 }
 
 footer .brand {
-  font-size: 1.875rem;
-  font-weight: 700;
-  background: linear-gradient(to right, #06b6d4, #3b82f6);
+  font-size: 2.5rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #00D4FF 0%, #8B5CF6 50%, #00FF88 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
+  margin-bottom: 1.5rem;
+  display: inline-block;
+  letter-spacing: -0.02em;
+  transition: all 0.3s ease;
+}
+
+footer .brand:hover {
+  transform: scale(1.05);
+  filter: drop-shadow(0 0 20px rgba(0, 212, 255, 0.3));
 }
 
 footer .description {
-  max-width: 28rem;
-  margin-bottom: 1.5rem;
-  color: #9ca3af;
+  max-width: 350px;
+  margin-bottom: 2rem;
+  color: #CBD5E1;
+  line-height: 1.6;
+  font-size: 1rem;
+  opacity: 0.9;
 }
 
-footer .social-links a,
-footer .quick-links a,
-footer .support-links a {
-  color: #9ca3af;
+.social-links {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.social-links a {
+  color: #9CA3AF;
   text-decoration: none;
-  transition: color 0.2s ease;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  position: relative;
+  overflow: hidden;
 }
 
-footer .social-links a:hover,
-footer .quick-links a:hover,
-footer .support-links a:hover,
-footer a:hover {
-  color: #06b6d4;
+.social-links a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(0, 212, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.social-links a:hover::before {
+  left: 100%;
+}
+
+.social-links a:hover {
+  color: #00D4FF;
+  background: rgba(0, 212, 255, 0.1);
+  border-color: rgba(0, 212, 255, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 212, 255, 0.2);
+}
+
+/* Quick Links and Support Links */
+.quick-links, .support-links {
+  position: relative;
 }
 
 footer h4 {
-  font-size: 1.125rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
-  color: #fff;
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: #FFFFFF;
+  position: relative;
+  display: inline-block;
+}
+
+footer h4::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 30px;
+  height: 2px;
+  background: linear-gradient(90deg, #00D4FF, #8B5CF6);
+  border-radius: 2px;
 }
 
 footer ul {
@@ -50,21 +143,169 @@ footer ul {
 }
 
 footer li {
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
 }
 
-footer .footer-bottom {
+.quick-links a,
+.support-links a {
+  color: #9CA3AF;
+  text-decoration: none;
+  font-weight: 400;
+  transition: all 0.3s ease;
+  display: inline-block;
+  position: relative;
+  padding: 0.25rem 0;
+}
+
+.quick-links a::before,
+.support-links a::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #00D4FF, #8B5CF6);
+  transition: width 0.3s ease;
+}
+
+.quick-links a:hover::before,
+.support-links a:hover::before {
+  width: 100%;
+}
+
+.quick-links a:hover,
+.support-links a:hover {
+  color: #00D4FF;
+  transform: translateX(4px);
+}
+
+/* Footer Bottom Section */
+.footer-bottom {
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   padding-top: 2rem;
   margin-top: 3rem;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.05), transparent);
+  backdrop-filter: blur(10px);
 }
 
-footer .footer-bottom p {
+.bottom-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.footer-bottom p {
   margin: 0;
   font-size: 0.875rem;
-  color: #9ca3af;
+  color: #9CA3AF;
+  opacity: 0.8;
 }
 
-footer .footer-bottom a {
+.bottom-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.footer-bottom a {
   font-size: 0.875rem;
+  color: #9CA3AF;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.footer-bottom a:hover {
+  color: #00D4FF;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .footer-wrapper {
+    padding: 0 1rem;
+  }
+
+  .grid-cols {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .brand-section {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  footer .brand {
+    font-size: 2rem;
+  }
+
+  .social-links {
+    justify-content: center;
+  }
+
+  .quick-links,
+  .support-links {
+    text-align: center;
+  }
+
+  .bottom-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  .bottom-links {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  footer {
+    padding: 3rem 0 1.5rem;
+  }
+
+  footer .brand {
+    font-size: 1.75rem;
+  }
+
+  .social-links {
+    gap: 1rem;
+  }
+
+  .social-links a {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.875rem;
+  }
+
+  .bottom-links {
+    gap: 1rem;
+  }
+}
+
+/* Animation for footer elements */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.brand-section,
+.quick-links,
+.support-links {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.quick-links {
+  animation-delay: 0.2s;
+}
+
+.support-links {
+  animation-delay: 0.4s;
 }

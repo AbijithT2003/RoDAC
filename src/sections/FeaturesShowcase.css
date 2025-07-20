@@ -1,15 +1,245 @@
+/* FeaturesShowcase.css - Modern 2025 Design */
 .features-section {
-  background: radial-gradient(circle at top center, #0f172a 0%, #020617 100%);
+  padding: 6rem 0;
+  background: 
+    radial-gradient(circle at 20% 50%, rgba(0, 212, 255, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(139, 92, 246, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 40% 80%, rgba(0, 255, 136, 0.05) 0%, transparent 50%),
+    linear-gradient(135deg, #0f172a 0%, #020617 50%, #0B1426 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.features-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(600px circle at 50% 0%, rgba(0, 212, 255, 0.05), transparent 50%),
+    linear-gradient(180deg, transparent 0%, rgba(15, 23, 42, 0.8) 100%);
+  pointer-events: none;
+}
+
+.features-header {
+  position: relative;
+  z-index: 2;
+  margin-bottom: 4rem;
 }
 
 .features-header h2 {
-  letter-spacing: -0.02em;
+  letter-spacing: -0.025em;
+  font-weight: 800;
+  background: linear-gradient(135deg, #FFFFFF 0%, #00D4FF 50%, #FFFFFF 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 1.5rem;
+  line-height: 1.1;
+}
+
+.features-header p {
+  font-size: 1.25rem;
+  font-weight: 400;
+  opacity: 0.9;
+}
+
+/* Enhanced feature cards */
+.feature-card {
+  will-change: transform, opacity;
+  transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  position: relative;
+}
+
+.feature-card:hover {
+  transform: translateY(-16px) scale(1.02);
+  z-index: 10;
+}
+
+/* Glass card base styling - should be defined in the component or inherited */
+.feature-card .glass-card,
+.feature-card > div {
+  background: rgba(15, 23, 42, 0.4);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 1.5rem;
+  padding: 2rem;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.feature-card:hover .glass-card,
+.feature-card:hover > div {
+  background: rgba(15, 23, 42, 0.6);
+  border-color: rgba(0, 212, 255, 0.3);
+  box-shadow: 
+    0 25px 50px rgba(0, 0, 0, 0.3),
+    0 0 0 1px rgba(0, 212, 255, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1),
+    0 0 40px rgba(0, 212, 255, 0.1);
+}
+
+/* Glassmorphism overlay effect */
+.feature-card .glass-card::before,
+.feature-card > div::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.feature-card:hover .glass-card::before,
+.feature-card:hover > div::before {
+  opacity: 1;
+}
+
+/* Icon styling */
+.feature-card svg {
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  filter: drop-shadow(0 4px 12px rgba(34, 211, 238, 0.3));
+}
+
+.feature-card:hover svg {
+  transform: scale(1.15) rotate(5deg);
+  filter: 
+    drop-shadow(0 8px 24px rgba(34, 211, 238, 0.4))
+    drop-shadow(0 0 20px rgba(34, 211, 238, 0.2));
+}
+
+/* Feature title styling */
+.feature-card h3 {
+  font-weight: 700;
+  font-size: 1.375rem;
+  margin-bottom: 1rem;
+  letter-spacing: -0.01em;
+  transition: color 0.3s ease;
+}
+
+.feature-card:hover h3 {
+  color: #00D4FF;
+}
+
+/* Feature description styling */
+.feature-card p {
+  line-height: 1.6;
+  opacity: 0.9;
+  transition: opacity 0.3s ease;
+}
+
+.feature-card:hover p {
+  opacity: 1;
+}
+
+/* Demo text styling */
+.feature-card .text-cyan-400 {
+  font-weight: 600;
+  font-size: 0.875rem;
+  padding: 0.5rem 1rem;
+  background: rgba(0, 212, 255, 0.1);
+  border: 1px solid rgba(0, 212, 255, 0.2);
+  border-radius: 50px;
+  display: inline-block;
+  margin-top: 1rem;
+  transition: all 0.3s ease;
+}
+
+.feature-card:hover .text-cyan-400 {
+  background: rgba(0, 212, 255, 0.2);
+  border-color: rgba(0, 212, 255, 0.4);
+  transform: scale(1.05);
+}
+
+/* Grid responsive behavior */
+.grid {
+  position: relative;
+  z-index: 2;
+}
+
+/* Animation keyframes for floating effect */
+@keyframes featureFloat {
+  0%, 100% { 
+    transform: translateY(0px) rotate(0deg); 
+  }
+  33% { 
+    transform: translateY(-8px) rotate(1deg); 
+  }
+  66% { 
+    transform: translateY(-4px) rotate(-1deg); 
+  }
 }
 
 .feature-card {
-  will-change: transform, opacity;
+  animation: featureFloat 8s ease-in-out infinite;
 }
-.feature-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+
+.feature-card:nth-child(2) {
+  animation-delay: -2s;
+}
+
+.feature-card:nth-child(3) {
+  animation-delay: -4s;
+}
+
+.feature-card:nth-child(4) {
+  animation-delay: -1s;
+}
+
+.feature-card:nth-child(5) {
+  animation-delay: -3s;
+}
+
+.feature-card:nth-child(6) {
+  animation-delay: -5s;
+}
+
+/* Pulse effect for featured cards */
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(0, 212, 255, 0.2);
+  }
+}
+
+.feature-card:hover .glass-card,
+.feature-card:hover > div {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .features-section {
+    padding: 4rem 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .features-section {
+    padding: 3rem 0;
+  }
+  
+  .feature-card .glass-card,
+  .feature-card > div {
+    padding: 1.5rem;
+  }
+  
+  .feature-card svg {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+  
+  .feature-card h3 {
+    font-size: 1.25rem;
+  }
 }

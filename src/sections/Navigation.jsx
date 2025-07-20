@@ -8,22 +8,27 @@ const Navigation = () => {
   const toggleMenu = () => setOpen(!open);
 
   return (
-    <nav className="absolute top-0 left-0 w-full p-4 flex justify-between items-center bg-black bg-opacity-50 backdrop-blur-md z-50">
-      <div className="text-white text-xl font-bold">RoDAC</div>
-      <div className="hidden md:flex gap-6 text-gray-300">
-        <a href="#features">Features</a>
-        <a href="#demo">Demo</a>
-        <a href="#pricing">Pricing</a>
-        <a href="#trust">Trust</a>
+    <nav className="nav-container">
+      <div className="nav-logo">RoDAC</div>
+
+      <div className="nav-links-desktop">
+        <a href="#features" className="nav-link">Features</a>
+        <a href="#demo" className="nav-link">Demo</a>
+        <a href="#pricing" className="nav-link">Pricing</a>
+        <a href="#trust" className="nav-link">Trust</a>
         <Button variant="primary" size="sm">Join Beta</Button>
       </div>
-      <button className="md:hidden text-white" onClick={toggleMenu}>{open ? <X /> : <Menu />}</button>
+
+      <button className="nav-toggle-button" onClick={toggleMenu}>
+        {open ? <X /> : <Menu />}
+      </button>
+
       {open && (
-        <div className="absolute top-full left-0 w-full bg-black flex flex-col items-center gap-4 py-6 text-gray-300">
-          <a href="#features">Features</a>
-          <a href="#demo">Demo</a>
-          <a href="#pricing">Pricing</a>
-          <a href="#trust">Trust</a>
+        <div className="nav-mobile-menu">
+          <a href="#features" className="nav-link">Features</a>
+          <a href="#demo" className="nav-link">Demo</a>
+          <a href="#pricing" className="nav-link">Pricing</a>
+          <a href="#trust" className="nav-link">Trust</a>
           <Button variant="primary" size="sm">Join Beta</Button>
         </div>
       )}

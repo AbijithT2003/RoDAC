@@ -1,18 +1,135 @@
+/* LiveDemoSection.css */
+
 .live-demo-section {
-  padding: 5rem 2rem;
-  background: #e0f2fe;
+  padding: 5rem 1rem;
+}
+
+.live-demo-header {
   text-align: center;
+  margin-bottom: 4rem;
+  transition: all 1s ease;
 }
 
-.demo-button {
-  background-color: #0ea5e9;
+.live-demo-header h2 {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 800;
   color: white;
-  padding: 0.75rem 1.5rem;
-  border-radius: 9999px;
-  font-weight: 600;
-  transition: background-color 0.3s;
+  margin-bottom: 1rem;
 }
 
-.demo-button:hover {
-  background-color: #0284c7;
+.live-demo-header p {
+  font-size: 1.25rem;
+  color: #9CA3AF;
+  max-width: 48rem;
+  margin: 0 auto;
+  opacity: 0.9;
+}
+
+.terminal-window {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 1.5rem;
+  border-radius: 1rem;
+}
+
+.terminal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.terminal-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.terminal-controls div {
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 9999px;
+}
+
+.control-red { background-color: #EF4444; }
+.control-yellow { background-color: #FACC15; }
+.control-green { background-color: #22C55E; }
+
+.terminal-title {
+  color: #9CA3AF;
+  margin-left: 1rem;
+}
+
+.command-line {
+  font-family: monospace;
+  font-size: 0.875rem;
+  transition: all 0.5s ease;
+}
+
+.command-line .command {
+  color: #34D399;
+}
+
+.command-line .prompt {
+  color: #06B6D4;
+}
+
+.command-line .status {
+  color: #D1D5DB;
+  margin-left: 1rem;
+  animation: pulse 2s infinite;
+}
+
+.live-metrics {
+  margin-top: 2rem;
+}
+
+.metric-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.metric-label {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: #E5E7EB;
+}
+
+.metric-value {
+  font-size: 1.75rem;
+  font-weight: 700;
+}
+
+.usage-graph {
+  margin-top: 2rem;
+}
+
+.usage-graph-title {
+  color: #9CA3AF;
+  font-size: 0.875rem;
+  margin-bottom: 0.5rem;
+}
+
+.usage-bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 0.25rem;
+  height: 8rem;
+  padding: 1rem;
+  background: linear-gradient(to right, rgba(6,182,212,0.2), rgba(139,92,246,0.2));
+  border-radius: 0.5rem;
+}
+
+.usage-bar {
+  background: linear-gradient(to top, #06B6D4, #8B5CF6);
+  border-radius: 0.125rem;
+  flex: 1;
+  animation: pulse 1.5s infinite ease-in-out;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
 }

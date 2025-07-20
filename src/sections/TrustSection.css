@@ -1,13 +1,58 @@
-.trust-section {
-  padding: 4rem 2rem;
-  background-color: #f0fdfa;
+.trustSection {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+  background-color: black;
+  color: white;
   text-align: center;
 }
 
-.trust-card {
-  background-color: #ecfeff;
-  border: 1px solid #a5f3fc;
-  border-radius: 1rem;
-  padding: 2rem;
-  margin: 1rem;
+.heading {
+  font-size: 2.25rem; /* text-4xl */
+  font-weight: 700;   /* font-bold */
+  margin-bottom: 3rem;
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  max-width: 72rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 768px) {
+  .statsGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.statItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.statValue {
+  font-size: 3rem; /* text-5xl */
+  font-weight: bold;
+}
+
+.green {
+  color: #34D399; /* Tailwind green-400 */
+}
+
+.blue {
+  color: #60A5FA; /* Tailwind blue-400 */
+}
+
+.purple {
+  color: #C084FC; /* Tailwind purple-400 */
+}
+
+.statLabel {
+  margin-top: 0.5rem;
+  color: rgba(255, 255, 255, 0.7);
 }
