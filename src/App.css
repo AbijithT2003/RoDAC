@@ -1,6 +1,8 @@
 /* App.css - Full Screen Responsive Design */
 
-/* Global Styles */
+/*THIS IS NOT BEING USED , IT IS A BACKUP FILE*/
+
+/* Global Styles 
 * {
   margin: 0;
   padding: 0;
@@ -21,7 +23,7 @@ body {
   line-height: 1.6;
 }
 
-/* Hero Section - Full Viewport */
+/* Hero Section - Full Viewport 
 .hero {
   min-height: 100vh;
   width: 100vw;
@@ -89,7 +91,7 @@ body {
   line-height: 1.6;
 }
 
-/* Button Group */
+/* Button Group 
 .button-group {
   display: flex;
   gap: 1.5rem;
@@ -157,7 +159,7 @@ body {
   box-shadow: 0 8px 25px rgba(255, 255, 255, 0.1);
 }
 
-/* Features Section - Full Width */
+/* Features Section - Full Width 
 .features {
   background: linear-gradient(135deg, #111827 0%, #1F2937 50%, #0F172A 100%);
   padding: 6rem 2rem;
@@ -201,7 +203,7 @@ body {
   margin-right: auto;
 }
 
-/* Feature Grid - Responsive and Full Width */
+/* Feature Grid - Responsive and Full Width 
 .feature-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -234,7 +236,7 @@ body {
   }
 }
 
-/* Feature Cards - Modern Glass Design */
+/* Feature Cards - Modern Glass Design 
 .feature-card {
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(20px);
@@ -286,13 +288,13 @@ body {
   margin: 0;
 }
 
-/* Footer - Full Width */
+/* Footer - Full Width 
 footer {
   width: 100vw;
   /* Your existing footer styles from the previous file */
-}
 
-/* Container Utilities */
+
+/* Container Utilities 
 .container {
   width: 100%;
   max-width: 1400px;
@@ -305,7 +307,7 @@ footer {
   padding: 0 2rem;
 }
 
-/* Responsive Typography */
+/* Responsive Typography 
 @media (max-width: 480px) {
   .hero {
     padding: 0 1rem;
@@ -341,22 +343,8 @@ footer {
   }
 }
 
-/* Large screens optimization */
-@media (min-width: 1920px) {
-  .hero {
-    padding: 0 4rem;
-  }
-  
-  .features {
-    padding: 8rem 4rem;
-  }
-  
-  .feature-grid {
-    gap: 4rem;
-  }
-}
 
-/* Animation for page load */
+/* Animation for page load 
 @keyframes fadeInUp {
   from {
     opacity: 0;
