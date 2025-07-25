@@ -16,8 +16,6 @@ const App = () => {
       <HeroSection /> 
       <FeaturesShowcase />
       <ValuePropositionSection />
-      <PricingSection />
-      <TrustSection />
       <NewsletterSection />
       <Footer />
     </>
@@ -25,6 +23,7 @@ const App = () => {
 };
 
 export default App;
-
-//<LiveDemoSection /> this section is commented out as per the original code
-//<LiveDemoSection /> is not included in the final render, but can be uncommented
+// Note: The following sections are not included in the final render, but can be uncommented if needed.
+//<LiveDemoSection /> 
+// <PricingSection /> 
+// <TrustSection />
