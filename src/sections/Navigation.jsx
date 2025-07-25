@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import Button from '../UI/Button';
 import './Navigation.css';
+import logo from '../assets/logo-rodac.png';
 
 const Navigation = () => {
   const [open, setOpen] = useState(false);
@@ -9,8 +10,11 @@ const Navigation = () => {
 
   return (
     <nav className="nav-container">
-      <div className="nav-logo">RoDAC</div>
-
+      <div className="nav-logo">
+        <a href="/">
+        <img src={logo} alt="RoDAC Logo" className="nav-logo-img" />
+        </a>
+      </div>
       <div className="nav-links-desktop">
         <a href="#features" className="nav-link">Features</a>
         <a href="#demo" className="nav-link">Demo</a>

@@ -1,9 +1,9 @@
 /* Navigation.css - Modern 2025 Design */
 .nav-container {
-  position: absolute;
+  position: relative;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 100vw;
   padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
@@ -29,17 +29,19 @@
 }
 
 /* Logo */
+/* Wrap logo image + text properly */
 .nav-logo {
-  font-size: 1.75rem;
-  font-weight: 800;
-  background: linear-gradient(135deg, #00D4FF 0%, #8B5CF6 50%, #00FF88 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  letter-spacing: -0.02em;
-  position: relative;
-  z-index: 2;
-  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.1rem;
+  text-decoration: none;
+}
+/* Logo image */
+.nav-logo-img {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+  display: block;
 }
 
 .nav-logo:hover {
